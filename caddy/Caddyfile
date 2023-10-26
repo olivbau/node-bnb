@@ -2,5 +2,5 @@
 	basicauth /* {
 		{$BASIC_AUTH}
 	}
-	reverse_proxy :8080
+	reverse_proxy :8545
 }
