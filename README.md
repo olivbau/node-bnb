@@ -1,4 +1,4 @@
-# Docknode BNB
+# Node BNB
 
 1. Prerequisites
 
