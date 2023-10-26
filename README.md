@@ -29,6 +29,7 @@ chmod -v u+x geth
 4. Setup Snapshot (up to 24 hours)
 
 ```bash
+# Using tools such screen is recommanded
 wget -O geth.tar.lz4 https://pub-c0627345c16f47ab858c9469133073a8.r2.dev/geth-20231012.tar.lz4
 tar -I lz4 -xvf geth.tar.lz4
 ```
