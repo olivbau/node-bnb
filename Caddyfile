@@ -2,5 +2,5 @@
 	basicauth /* {
 		{$NODE_BNB_BASIC_AUTH}
 	}
-	reverse_proxy :8545
+	reverse_proxy localhost:8545
 }
