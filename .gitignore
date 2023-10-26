@@ -1,0 +1,10 @@
+*DS_Store
+.vs/
+.vscode/
+.idea/
+
+# .env file
+.env
+
+geth.tar.lz4
+server

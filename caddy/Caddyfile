@@ -1,0 +1,6 @@
+{HOST} {
+	basicauth /* {
+		{$BASIC_AUTH}
+	}
+	reverse_proxy :8080
+}
