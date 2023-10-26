@@ -1,6 +1,6 @@
-{$HOST} {
+{$NODE_BNB_HOST} {
 	basicauth /* {
-		{$BASIC_AUTH}
+		{$NODE_BNB_BASIC_AUTH}
 	}
 	reverse_proxy :8545
 }
