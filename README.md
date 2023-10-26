@@ -6,16 +6,24 @@
 - `sudo apt update && sudo apt upgrade -y && sudo apt install -y git unzip lz4`
 - `git clone https://github.com/olivbau/node-bnb && cd node-bnb`
 
-1. Configure environement variables
+2. Run Caddy
 
 ```bash
+# Set environment variables
 cp .env.example .env
 
 # Generate passwords for basic auth
 caddy hash-password --plaintext 'my_password'
 
-# Set the host and basic auth
+# Set users and passwords for basic auth
+# Set host
 nano .env
+
+# Start caddy server
+caddy start --config ./caddy/Caddyfile --envfile .env
+
+# Run caddy server
+caddy stop
 ```
 
 3. Download BNB Geth
