@@ -6,5 +6,6 @@
 # .env file
 .env
 
+geth
 geth.tar.lz4
 server
