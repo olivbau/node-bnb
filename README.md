@@ -45,5 +45,5 @@ tar -I lz4 -xvf geth.tar.lz4
 5. Run
 
 ```bash
-./geth --config ./bnb/config.toml --datadir ./server/data-seed  --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0
+./geth --config ./bnb/config.toml --datadir ./server/data-seed  --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0 --http --http.port 8545
 ```
