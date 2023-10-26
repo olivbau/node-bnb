@@ -14,7 +14,7 @@ cp .env.example .env
 # Generate passwords for basic auth
 caddy hash-password --plaintext 'my_password'
 
-# Set the host
+# Set the host and basic auth
 nano .env
 ```
 
