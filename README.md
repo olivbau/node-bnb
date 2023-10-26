@@ -43,7 +43,18 @@ wget -O geth.tar.lz4 "<paste snapshot URL here>"
 tar -I lz4 -xvf geth.tar.lz4
 ```
 
-5. Run
+5. Setup UFW
+
+```bash
+ufw allow ssh
+sudo ufw allow http
+sudo ufw allow https
+ufw allow 30311
+ufw deny 8545
+ufw enable
+```
+
+6. Run
 
 ```bash
 # Start a screen session
