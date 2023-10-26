@@ -38,12 +38,35 @@ chmod -v u+x geth
 
 ```bash
 # Using tools such screen is recommanded
-wget -O geth.tar.lz4 https://pub-c0627345c16f47ab858c9469133073a8.r2.dev/geth-20231012.tar.lz4
+# https://github.com/bnb-chain/bsc-snapshots
+wget -O geth.tar.lz4 "<paste snapshot URL here>"
 tar -I lz4 -xvf geth.tar.lz4
 ```
 
 5. Run
 
 ```bash
-./geth --config ./bnb/config.toml --datadir ./server/data-seed  --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0 --http --http.port 8545
+# Start a screen session
+screen -S geth-bnb
+
+./geth --config ./bnb/config.toml --datadir ./server/data-seed  --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0 --http --http.port 8545 --http.vhosts=* --http.addr "0.0.0.0"
+
+# Detach from a screen session
+# ctrl + a + d
+```
+
+6. Useful commands
+
+```bash
+# List screen sessions
+screen -ls
+
+# Attach to a screen session
+screen -r geth-bnb
+
+# Kill a screen session
+screen -X -S geth-bnb quit
+
+# Detach from a screen session
+# ctrl + a + d
 ```
