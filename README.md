@@ -2,11 +2,11 @@
 
 1. Prerequisites
 
-- `apt update && apt upgrade -y && apt install -y git unzip lz4`
-- `git clone https://github.com/olivbau/node-bnb && cd node-bnb`
 - Install caddy: https://caddyserver.com/docs/install
+- `sudo apt update && sudo apt upgrade -y && sudo apt install -y git unzip lz4`
+- `git clone https://github.com/olivbau/node-bnb && cd node-bnb`
 
-2. Configure environement variables
+1. Configure environement variables
 
 ```bash
 cp .env.example .env
