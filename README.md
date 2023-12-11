@@ -58,7 +58,7 @@ ufw enable
 
 ```bash
 # Start a screen session
-screen -S geth-bnb
+screen -R geth-bnb
 
 ./geth --config ./bnb/config.toml --datadir ./server/data-seed  --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0 --http --http.port 8545 --http.vhosts=* --http.addr "0.0.0.0"
 
