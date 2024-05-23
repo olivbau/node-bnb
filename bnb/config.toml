@@ -36,7 +36,7 @@ WSPort = 8546
 WSModules = ["net", "web3", "eth"]
 
 [Node.P2P]
-MaxPeers = 40
+MaxPeers = 80
 NoDiscovery = false
 StaticNodes = []
 ListenAddr = ":30311"
