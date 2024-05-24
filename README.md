@@ -35,13 +35,17 @@ mv geth_linux geth
 chmod -v u+x geth
 ```
 
-4. Setup Snapshot (up to 24 hours)
+4. Setup Snapshot (can take up to 24 hours)
 
 ```bash
 # Using tools such screen is recommanded
-# https://github.com/bnb-chain/bsc-snapshots
-wget -O geth.tar.lz4 "<paste snapshot URL here>"
-tar -I lz4 -xvf geth.tar.lz4
+# https://github.com/48Club/bsc-snapshots
+# ( also check https://github.com/bnb-chain/bsc-snapshots )
+
+aria2c -s4 -x4 -k1024M $Link -o my_snapshot
+zstd -cd my_snapshot | tar xf -
+
+mv my_snapshot/geth.fast/geth/chaindata geth.fast/geth/chaindata/
 ```
 
 5. Setup UFW
@@ -61,7 +65,7 @@ ufw enable
 # Start a screen session
 screen -R geth-bnb
 
-./geth --config ./bnb/config.toml --datadir ./server/data-seed  --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0 --http --http.port 8545 --http.vhosts=* --http.addr "0.0.0.0"
+./geth --config ./bnb/config.toml  --cache 8000 --rpc.allow-unprotected-txs --history.transactions 90000 --tries-verify-mode none --state.scheme path --http --http.port 8545 --http.vhosts=* --http.addr "0.0.0.0"
 
 # Detach from a screen session
 # ctrl + a + d
