@@ -45,7 +45,9 @@ chmod -v u+x geth
 aria2c -s4 -x4 -k1024M $Link -o my_snapshot
 zstd -cd my_snapshot | tar xf -
 
-mv my_snapshot/geth.fast/geth/chaindata geth.fast/geth/chaindata/
+mkdir ./datadir
+mkdir ./datadir/geth
+mv my_snapshot/geth.fast/geth/chaindata datadir/geth/chaindata/
 ```
 
 5. Setup UFW
@@ -65,7 +67,7 @@ ufw enable
 # Start a screen session
 screen -R geth-bnb
 
-./geth --config ./bnb/config.toml  --cache 8000 --rpc.allow-unprotected-txs --history.transactions 90000 --tries-verify-mode none --state.scheme path --http --http.port 8545 --http.vhosts=* --http.addr "0.0.0.0"
+./geth --config ./bnb/config.toml --datadir ./datadir  --cache 8000 --rpc.allow-unprotected-txs --history.transactions 90000 --tries-verify-mode none --http --http.port 8545 --http.vhosts=* --http.addr "0.0.0.0"
 
 # Detach from a screen session
 # ctrl + a + d
